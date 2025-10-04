@@ -13,6 +13,7 @@ const reservationSchema=new mongoose.Schema({
         type:String,
         required:true,
         minLength:[3,"first name must contain at least 3 charecter"],
+        maxLength:[30,"first name cannot excced 30 cahrecters"],
     },
 
     email: {

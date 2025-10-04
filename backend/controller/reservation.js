@@ -21,7 +21,7 @@ export const sendReservation=async(req,res,next)=>{
             );
             return next(new ErrorHandler(validationErrors.join(" , "),400));
         }
-        next(error);
+        next(error); 
     }
     
 }

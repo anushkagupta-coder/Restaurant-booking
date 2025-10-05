@@ -2,7 +2,7 @@ import React from 'react'
 import {data} from "../restApi.json";
 const WhoAreWe = () => {
   return (
-    <section className='wgo_are_we' id='who_are_we'>
+    <section className='who_are_we' id='who_are_we'>
         <div className="container">
             <div className="text_banner">
                 {

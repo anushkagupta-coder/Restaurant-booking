@@ -8,7 +8,6 @@ const Home = () => {
     <>
       <HeroSection/>
       <About/>
-
       <Qualities/>
       <Menu/>
 

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
-import Link from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 const Success = () => {
     const [countdown,setCountdown]=useState(10);

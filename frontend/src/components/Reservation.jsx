@@ -22,7 +22,7 @@ const Reservation = () => {
             {
                 headers:{
                     "content-Type": "application/json"
-                }
+                },
                 withCredentials:true,
             }
         );
@@ -46,10 +46,10 @@ const Reservation = () => {
     <section className='reservation' id='reservation'>
         <div className="container">
             <div className="banner">
-                <img src=".reservation.png" alt="res" />
+                <img src="/reservation.png" alt="res" />
             </div>
             <div className="banner">
-                <div className="reservation_from_box">
+                <div className="reservation_form_box">
                     <h1>Make a Reservation</h1>
                     <p>For further questions .please Call us</p>
                     <form>
@@ -88,13 +88,16 @@ const Reservation = () => {
                                 onChange={(e)=> setPhone(e.target.value)} 
                             />
 
-                            <button type='submit'onClick={handleReservation}>
+                            
+                        </div>
+
+                        <button type='submit'onClick={handleReservation}>
                                 RESERVE NOW{""} 
                                 <span>
                                     <HiOutlineArrowNarrowRight/>
                                 </span>
                             </button>
-                        </div>
+                            
                     </form>
                 </div>
             </div>

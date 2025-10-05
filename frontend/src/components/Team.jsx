@@ -7,7 +7,7 @@ const Team = () => {
       <div className="container">
         <div className="heading_section">
             <h1 className='heading'>Our Team</h1>
-            <p>Aboutmy team </p>
+            <p>Meet our expert Chefs </p>
         </div>
         <div className="team_container">
             {

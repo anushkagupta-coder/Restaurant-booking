@@ -18,7 +18,12 @@ const Reservation = () => {
     e.preventDefault();
     console.log("Reservation button clicked ✅");
     try {
-    console.log("DATA SENT TO BACKEND:", { firstName, lastName, email, phone, date, time });
+        if(!firstName|| !lastName|| !email|| !phone|| !date|| !time){
+            return toast.error("Please fill all the fields correctly");
+        }
+        if(phone.length !== 10){
+            return toast.error("Phone number should be 10 digits long");
+        }
 
       const { data } = await axios.post("http://localhost:4000/api/v1/reservation/send",
         { firstName, lastName, email, phone, date, time },
@@ -29,6 +34,7 @@ const Reservation = () => {
           withCredentials: true,
         }
       );
+        console.log("DATA SENT TO BACKEND:", { firstName, lastName, email, phone, date, time });
         toast.success(data.message);
         setFirstName("");
         setLastName("");
@@ -55,7 +61,7 @@ const Reservation = () => {
                 <div className="reservation_form_box">
                     <h1>Make a Reservation</h1>
                     <p>For further questions .please Call us</p>
-                    <form>
+                    <form onSubmit={handleReservation}>
                         <div>
                             <input 
                             type='text' 
@@ -85,7 +91,7 @@ const Reservation = () => {
                                 onChange={(e)=> setEmail(e.target.value)} 
                             />
                             <input 
-                                type="number" 
+                                type="tel" 
                                 placeholder='Phone' 
                                 value={phone} 
                                 onChange={(e)=> setPhone(e.target.value)} 
@@ -94,7 +100,7 @@ const Reservation = () => {
                             
                         </div>
 
-                        <button type='submit' onSubmit={handleReservation}>
+                        <button type='submit'>
                                 RESERVE NOW{""} 
                                 <span>
                                     <HiOutlineArrowNarrowRight/>

@@ -25,15 +25,17 @@ const Reservation = () => {
             return toast.error("Phone number should be 10 digits long");
         }
 
-      const { data } = await axios.post("http://localhost:4000/api/v1/reservation/send",
-        { firstName, lastName, email, phone, date, time },
-        {
-          headers:{ 
-            "Content-Type": "application/json"
-          },
-          withCredentials: true,
-        }
-      );
+      const { data } = await axios.post(
+  `${import.meta.env.VITE_API_URL}/api/v1/reservation/send`,
+  { firstName, lastName, email, phone, date, time },
+  {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    withCredentials: true
+  }
+);
+
         console.log("DATA SENT TO BACKEND:", { firstName, lastName, email, phone, date, time });
         toast.success(data.message);
         setFirstName("");
